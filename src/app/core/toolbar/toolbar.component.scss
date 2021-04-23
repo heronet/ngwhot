@@ -1,0 +1,22 @@
+.container {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    height: 100%;
+    min-height: 60px;
+}
+.user {
+    background-color: brown;
+    display: flex;
+}
+.rec-user {
+    background-color: cadetblue;
+    display: flex;
+}
+img {
+    height: 50px;
+    width: 50px;
+    margin: 5px 10px;
+}
+.info > p {
+   margin: 15px 0px 0px 0px;
+}
