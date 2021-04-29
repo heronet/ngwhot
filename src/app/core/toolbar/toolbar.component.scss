@@ -5,18 +5,31 @@
     min-height: 60px;
 }
 .user {
-    background-color: brown;
+    background-color: #263238;
     display: flex;
+    color: #fff;
+    border-bottom: 1px #000 solid;
+    border-right: 1px #000 solid;
 }
 .rec-user {
-    background-color: cadetblue;
+    background-color: #263238;
     display: flex;
+    color: #fff;
+    border-bottom: 1px #000 solid;
 }
 img {
     height: 50px;
     width: 50px;
     margin: 5px 10px;
+    border-radius: 50%;
 }
 .info > p {
-   margin: 15px 0px 0px 0px;
+   margin: 5px 0px 0px 0px;
+}
+.logout-button {
+    border: hidden;
+    color: white;
+    font-variant: small-caps;
+    background: crimson;
+    cursor: pointer;
 }
