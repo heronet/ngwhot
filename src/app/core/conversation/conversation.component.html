@@ -1,1 +1,12 @@
-<p>conversation works!</p>
+<div class="container" *ngIf="messages">
+    <div class="bubble-wrapper" *ngFor="let message of messages" >
+        <div class="bubble" [ngClass]="(message.sendername === recipientName) ? 'bubble-me ': 'bubble-other-guy'">
+            <p>{{message.text}}</p>
+            <p class="time">{{message.createdAt | date: 'medium'}}</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!messages" style="height: 100%; display: flex;">
+    <div style="margin: auto auto; font-family: cursive; font-size: 100px;">Welcome to Whot</div>
+</div>

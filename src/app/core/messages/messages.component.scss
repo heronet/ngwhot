@@ -1,0 +1,22 @@
+.card {
+  background-color: #263238;
+  display: flex;
+  color: #fff;
+  border-bottom: 1px #000 solid;
+  border-right: 1px #000 solid;
+  cursor: pointer;
+  user-select: none;
+}
+.card-selected {
+  color: aqua;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  border-radius: 50%;
+}
+.info > p {
+  margin: 5px 0px 5px 0px;
+}

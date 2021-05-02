@@ -3,17 +3,23 @@
   grid-template-columns: 3fr 7fr;
   grid-template-rows: 0.5fr 9.5fr;
   height: 100vh;
+  
 }
 
 .header {
   grid-column: 1 / 3;
+  font-family: cursive;
 }
 
 .main {
-  background-color: #263238;
+  // background-color: #263238;
+  background-image: url(/assets/bg3.webp);
+  background-size: cover;
+  background-position: center;
   margin: 0;
   padding: 0;
   color: #fff;
+  overflow-y: scroll;
 }
 
 .sidebar {
@@ -21,4 +27,5 @@
   margin: 0;
   padding: 0;
   color: #fff;
+  overflow-y: scroll;
 }

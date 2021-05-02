@@ -1,0 +1,26 @@
+.bubble-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.bubble {
+    font-family: 'Roboto', sans-serif;
+    margin: 8px;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+}
+.bubble > p {
+    margin: 0;
+}
+.bubble-me {
+    align-self: flex-start;
+    background-color: #0074D9;
+}
+.bubble-other-guy {
+    align-self: flex-end;
+    background-color: #9B2335;
+}
+.time {
+    font-size: 9px;
+    padding-top: 5px;
+}

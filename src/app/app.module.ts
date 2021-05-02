@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,7 @@ import { ConversationComponent } from './core/conversation/conversation.componen
 import { ToolbarComponent } from './core/toolbar/toolbar.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { CoreComponent } from './core/core.component';
+import { TokenInterceptor } from './utils/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { CoreComponent } from './core/core.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
