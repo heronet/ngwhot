@@ -4,35 +4,37 @@
         <input type="text" name="username" id="username" placeholder="Username" required ngModel #name="ngModel">
         <input type="email" name="email" id="email" placeholder="Email" required ngModel #email="ngModel" email>
         <input type="password" name="password" placeholder="Password" required ngModel #password="ngModel" minlength="4">
-        <button type="submit">Login</button>
+        <button type="submit" [disabled]="form.invalid">Register</button>
 
-        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="validation">
-            <div *ngIf="name.errors.required">
+        <ul *ngIf="name.invalid && (name.dirty || name.touched)" class="validation">
+            <li *ngIf="name.errors.required">
                 Username is required.
-            </div>
-            <div *ngIf="name.errors.minlength">
+            </li>
+            <li *ngIf="name.errors.minlength">
                 Username must be at least 4 characters long.
-            </div>
-        </div>
+            </li>
+        </ul>
 
-        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="validation">
-            <div *ngIf="email.errors.required">
-                Email is required.
-            </div>
-            <div *ngIf="!email_valid">
-                Email must be valid.
-            </div>
-        </div>
+        <ul *ngIf="email.invalid && (email.dirty || email.touched)" class="validation">
+            <li *ngIf="email.errors.required">
+                A valid Email is required.
+            </li>
+        </ul>
 
-        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="validation">
-            <div *ngIf="password.errors.required">
+        <ul *ngIf="password.invalid && (password.dirty || password.touched)" class="validation">
+            <li *ngIf="password.errors.required">
                 Password is required.
-            </div>
-            <div *ngIf="password.errors.minlength">
+            </li>
+            <li *ngIf="password.errors.minlength">
                 Password must be at least 4 characters long.
-            </div>
-        </div>
+            </li>
+        </ul>
+        <ul *ngIf="server_errors" class="validation">
+            <li *ngFor="let error of server_errors">
+                {{error.description}}
+            </li>
+        </ul>
 
-        <div><span>Not a user? </span><a routerLink="/register">register</a></div>
+        <div><span>Already a user? </span><a routerLink="/login">login</a></div>
     </form>
 </div>

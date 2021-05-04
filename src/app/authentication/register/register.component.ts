@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterComponent implements OnInit {
   email_valid = false;
+  server_errors: any;
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -32,6 +33,9 @@ export class RegisterComponent implements OnInit {
     };
 
     this.authService.register(user).subscribe(res => {
+
+    }, res => {
+      this.server_errors = res.error.errors;
     })
   }
 

@@ -18,13 +18,20 @@
     margin: 5px;
 }
 .form > input {
-    border: 1px solid cornflowerblue;
+    border: 2px solid cornflowerblue;
 }
+
 .form > button {
+    color: #fff;
+    background-color: royalblue;
+    cursor: pointer;
+}
+.form > button:disabled {
     color: #fff;
     background-color: cornflowerblue;
     cursor: pointer;
 }
+
 .form > p {
     color: #fff;
     text-align: center;
@@ -40,4 +47,11 @@
 .form > div > a {
     text-decoration: underline;
     color: cornflowerblue;
+}
+form>.validation {
+  color: coral;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 5px;
+  padding: 5px;
 }

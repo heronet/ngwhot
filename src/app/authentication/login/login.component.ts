@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  server_error: string;
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -18,6 +18,9 @@ export class LoginComponent implements OnInit {
     const password = form.value.password.trim()
 
     this.authService.login({email, password}).subscribe(res => {
+
+    }, res => {
+      this.server_error = res.error;
     })
   }
 

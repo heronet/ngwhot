@@ -1,9 +1,18 @@
 <div class="container">
     <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
         <p>Login</p>
-        <input type="email" name="email" id="email" placeholder="Email" required ngModel>
-        <input type="password" name="password" placeholder="Password" required ngModel>
-        <button type="submit">Login</button>
+        <input type="email" name="email" id="email" placeholder="Email" required email ngModel #email="ngModel">
+        <input type="password" name="password" placeholder="Password" required ngModel minlength="4">
+        <button type="submit" [disabled]="form.invalid">Login</button>
+
+        <span *ngIf="server_error" class="validation">{{server_error}}</span>
+        <ul *ngIf="email.invalid && (email.dirty || email.touched)" class="validation" style="list-style: none;">
+            <li *ngIf="email.errors.required">
+                A valid Email is required.
+            </li>
+        </ul>
+
         <div><span>Not a user? </span><a routerLink="/register">register</a></div>
+
     </form>
 </div>
