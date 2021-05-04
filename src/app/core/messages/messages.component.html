@@ -7,12 +7,12 @@
         <img src="/assets/avatar.png" alt="">
         <div class="info">
             <p>{{message.displayName}}</p>
-            <p style="font-size: 13px;">{{message.text | slice:0:35}}...</p>
+            <p style="font-size: 13px;">{{(message.sendername === message.displayName) ? message.text : ("You: " + message.text) | slice:0:35}}...</p>
             <p style="font-size: 10px;">{{message.createdAt | date: 'medium'}}</p>
         </div>
     </div>
 </div>
 
 <div class="loading" *ngIf="!inboxMessages">
-
+    <p>Loading...</p>
 </div>

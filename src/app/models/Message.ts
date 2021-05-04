@@ -7,4 +7,6 @@ export interface Message {
     recipientId: string;
     createdAt: string;
     displayName: string;
+    displayNameActive: boolean;
+    userLastActive: string;
 }

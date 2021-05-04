@@ -1,11 +1,16 @@
-<div class="container" *ngIf="messages">
+<div *ngIf="messages" class="chat">
     <div class="bubble-wrapper" *ngFor="let message of messages" >
         <div class="bubble" [ngClass]="(message.sendername === recipientName) ? 'bubble-me ': 'bubble-other-guy'">
             <p>{{message.text}}</p>
             <p class="time">{{message.createdAt | date: 'medium'}}</p>
         </div>
     </div>
+    <form class="text-box" #form="ngForm" (ngSubmit)="onSend(form)">
+        <textarea autocomplete="off" rows="2" placeholder="Enter Text..." name="text" ngModel style="width: 30vw;"></textarea>
+        <button type="submit">Send</button>
+    </form>
 </div>
+
 
 <div *ngIf="!messages" style="height: 100%; display: flex;">
     <div style="margin: auto auto; font-family: cursive; font-size: 100px;">Welcome to Whot</div>

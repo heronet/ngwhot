@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthData } from './models/AuthData';
 import { AuthService } from './services/auth.service';
+import { SignalrService } from './services/signalr.service';
 
 @Component({
   selector: 'app-root',
@@ -19,12 +20,13 @@ export class AppComponent implements OnInit, OnDestroy {
     // Login user if credentials are present in localstorage
     this.setupUser();
     // Listen for login/ logout events. 
+    // First used when a user manually logs in
     this.authSubscription = this.authService.authenticatedUser$.subscribe(authData => {
       // Navigate to login screen if logged out
       if(authData == null) {
-        this.router.navigateByUrl("/login")
+        this.router.navigateByUrl("/login");
       } else {
-        this.router.navigateByUrl('/chat')
+        this.router.navigateByUrl('/chat'); // As soon as the user is authenticated, redirect them to /chat
       }
     })
   }
@@ -32,10 +34,10 @@ export class AppComponent implements OnInit, OnDestroy {
   setupUser() {
     this.userData = JSON.parse(localStorage.getItem('authData')) as AuthData
     if(this.userData) {
-      this.authService.setUser(this.userData)
-      this.router.navigateByUrl("/chat")
+      this.authService.setUser(this.userData);
+      this.router.navigateByUrl("/chat");
     } else {
-      this.router.navigateByUrl("/login")
+      this.router.navigateByUrl("/login");
     }
   }
   // Unsubscribe from listener

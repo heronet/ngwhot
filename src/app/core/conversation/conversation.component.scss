@@ -24,3 +24,35 @@
     font-size: 9px;
     padding-top: 5px;
 }
+.chat {
+    margin-bottom: 60px;
+}
+.text-box {
+    position: absolute;
+    bottom: 10px;
+    margin-left: 20vw;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.25rem;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    display: flex;
+}
+.text-box > textarea {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+.text-box > textarea:focus {
+  outline: none;
+}
+
+.text-box>button {
+  background: crimson;
+  border: none;
+  padding: 5px;
+  margin-left: 5px;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
