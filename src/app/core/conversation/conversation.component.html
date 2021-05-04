@@ -1,12 +1,12 @@
 <div *ngIf="messages" class="chat">
-    <button (click)="onLoadMore()" *ngIf="messages.length >= takeMessages" class="button-load">Show Older Messages</button>
+    <button (click)="onLoadMore()" *ngIf="(messages.length >= takeMessages) && (!isButtonClickMessageLoading)" class="button-load">Show Older Messages</button>
     <div class="bubble-wrapper" *ngFor="let message of messages" >
         <div class="bubble" [ngClass]="(message.sendername === recipientName) ? 'bubble-me ': 'bubble-other-guy'">
             <p>{{message.text}}</p>
             <p class="time">{{message.createdAt | date: 'medium'}}</p>
         </div>
     </div>
-    <button (click)="onLoadLess()" *ngIf="skipMessages >= takeMessages" class="button-load">Show Newer Messages</button>
+    <button (click)="onLoadLess()" *ngIf="(skipMessages >= takeMessages) && (!isButtonClickMessageLoading)" class="button-load">Show Newer Messages</button>
     <form class="text-box" #form="ngForm" (ngSubmit)="onSend(form)">
         <textarea autocomplete="off" rows="2" placeholder="Enter Text..." name="text" ngModel style="width: 30vw;"></textarea>
         <button type="submit">Send</button>

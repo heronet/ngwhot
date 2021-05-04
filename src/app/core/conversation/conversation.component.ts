@@ -17,6 +17,7 @@ export class ConversationComponent implements OnInit, OnDestroy {
   recipientName: string;
   skipMessages = 0;
   takeMessages = 10;
+  isButtonClickMessageLoading = false;
 
   messages: Message[];
   connectedUsers: String[] = [];
@@ -50,14 +51,17 @@ export class ConversationComponent implements OnInit, OnDestroy {
     this.messagesService.getConversation({recipientName: this.recipientName, skip: this.skipMessages}).subscribe(messages => {
       if(messages) // Don't accept response if it is empty
         this.messages = messages;
+        this.isButtonClickMessageLoading = false;
     })
   }
   onLoadMore() {
+    this.isButtonClickMessageLoading = true;
     this.skipMessages = this.skipMessages + this.takeMessages;
     this.getConversation();
   }
   onLoadLess() {
     if(this.skipMessages >= this.takeMessages) {
+      this.isButtonClickMessageLoading = true;
       this.skipMessages = this.skipMessages - this.takeMessages;
       this.getConversation();
     }
