@@ -1,0 +1,33 @@
+.container {
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/bg3.jpeg);
+    background-size: cover;
+}
+.form {
+    margin: 0 auto;
+    padding-top: 10vw;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.form > * {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+}
+.form > input {
+    border: 1px solid cornflowerblue;
+}
+.form > button {
+    color: #fff;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+.form > p {
+    color: #fff;
+    text-align: center;
+    font-size: 90px;
+    font-family: cursive;
+}

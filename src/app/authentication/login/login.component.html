@@ -1,7 +1,8 @@
 <div class="container">
     <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <input type="email" name="email" ngModel>
-        <input type="password" name="password" ngModel>
+        <p>Login</p>
+        <input type="email" name="email" id="email" placeholder="Email" ngModel>
+        <input type="password" name="password" placeholder="Password" ngModel>
         <button type="submit">Login</button>
     </form>
 </div>

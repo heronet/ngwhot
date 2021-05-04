@@ -44,7 +44,7 @@ export class ConversationComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.recipientNameSubscription.unsubscribe();
-    this.messagesService.destroyHubConnection();
+    // this.messagesService.destroyHubConnection();
   }
 
   getConversation() {
