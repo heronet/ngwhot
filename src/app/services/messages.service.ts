@@ -35,11 +35,11 @@ export class MessagesService {
       })
     )
   }
-  getConversation(recipientName: string) {
-    return this.http.get<Message[]>(`${this.BASE_URL}/message/${recipientName}`);
+  getConversation(data: {recipientName: string, skip: number}) {
+    return this.http.get<Message[]>(`${this.BASE_URL}/message/${data.recipientName}?skip=${data.skip}`);
   }
   sendMessage(message: Partial<Message>) {
-    // return this.http.post<Message>(`${this.BASE_URL}/message`, message);
+    // return this.http.post<Message>(`${this.BASE_URL}/message`, message); Can be used for sending message using HTTPPOST
     return this.hubConnection.invoke("SendMessage", message).catch(err => console.log(err));
   }
   createHubConnection(otherGuy: string) {
