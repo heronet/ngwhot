@@ -11,6 +11,7 @@ import { ToolbarComponent } from './core/toolbar/toolbar.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { CoreComponent } from './core/core.component';
 import { TokenInterceptor } from './utils/token.interceptor';
+import { RegisterComponent } from './authentication/register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TokenInterceptor } from './utils/token.interceptor';
     ConversationComponent,
     ToolbarComponent,
     LoginComponent,
-    CoreComponent
+    CoreComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

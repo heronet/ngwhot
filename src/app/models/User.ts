@@ -1,5 +1,6 @@
 export interface User {
-    userName: string;
+    username: string;
     email: string;
     id: string;
+    password: string; // Only used as DTO. Not fetched from the database
 }

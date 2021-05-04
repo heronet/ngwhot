@@ -1,0 +1,38 @@
+<div class="container">
+    <form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <p>Register</p>
+        <input type="text" name="username" id="username" placeholder="Username" required ngModel #name="ngModel">
+        <input type="email" name="email" id="email" placeholder="Email" required ngModel #email="ngModel" email>
+        <input type="password" name="password" placeholder="Password" required ngModel #password="ngModel" minlength="4">
+        <button type="submit">Login</button>
+
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="validation">
+            <div *ngIf="name.errors.required">
+                Username is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+                Username must be at least 4 characters long.
+            </div>
+        </div>
+
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="validation">
+            <div *ngIf="email.errors.required">
+                Email is required.
+            </div>
+            <div *ngIf="!email_valid">
+                Email must be valid.
+            </div>
+        </div>
+
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="validation">
+            <div *ngIf="password.errors.required">
+                Password is required.
+            </div>
+            <div *ngIf="password.errors.minlength">
+                Password must be at least 4 characters long.
+            </div>
+        </div>
+
+        <div><span>Not a user? </span><a routerLink="/register">register</a></div>
+    </form>
+</div>
