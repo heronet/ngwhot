@@ -7,12 +7,13 @@
         </div>
     </div>
     <div class="rec-user">
-        <img src="/assets/avatar.png" alt="">
-        <div class="info">
+        <img src="/assets/avatar.png" alt="" *ngIf="!isOnSearchMode">
+        <div class="info" *ngIf="!isOnSearchMode">
             <p>{{recipientName || 'Other Guy'}}</p>
             <p style="font-size: 15px; margin: 0px 0px 5px 0px;">{{recipienOnline ? 'Online': 'last seen: ' + (recipientLastActive ? (recipientLastActive | date: 'medium') : "Offline")}}</p>
         </div>
         <span style="flex: 1 1 auto;"></span>
+        <button (click)="onSearchClicked()" class="search-button">Find People</button>
         <button (click)="onLogout()" class="logout-button">Logout</button>
     </div>
     

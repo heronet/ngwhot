@@ -1,4 +1,4 @@
-<div *ngIf="messages" class="chat">
+<div *ngIf="recipientName" class="chat">
     <button (click)="onLoadMore()" *ngIf="(messages.length >= takeMessages) && (!isButtonClickMessageLoading)" class="button-load">Show Older Messages</button>
     <div class="bubble-wrapper" *ngFor="let message of messages" >
         <div class="bubble" [ngClass]="(message.sendername === recipientName) ? 'bubble-me ': 'bubble-other-guy'">
@@ -13,6 +13,6 @@
     </form>
 </div>
 
-<div *ngIf="!messages" style="height: 100%; display: flex;">
+<div *ngIf="!recipientName" style="height: 100%; display: flex;">
     <div style="margin: auto auto; font-family: cursive; font-size: 100px;">Welcome to Whot</div>
 </div>

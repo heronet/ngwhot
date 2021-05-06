@@ -3,7 +3,8 @@
   grid-template-columns: 3fr 7fr;
   grid-template-rows: 0.5fr 9.5fr;
   height: 100vh;
-  
+  background-image: url(/assets/bg3.jpg);
+  background-size: cover;
 }
 
 .header {
@@ -13,8 +14,6 @@
 
 .main {
   // background-color: #263238;
-  background-image: url(/assets/bg3.jpg);
-  background-size: cover;
   background-position: center;
   margin: 0;
   padding: 0;
@@ -24,6 +23,7 @@
 
 .sidebar {
   background-color: #131c21;
+  opacity: 0.9;
   margin: 0;
   padding: 0;
   color: #fff;

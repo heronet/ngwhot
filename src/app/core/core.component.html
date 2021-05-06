@@ -2,10 +2,23 @@
   <header class="header">
     <app-toolbar></app-toolbar>
   </header>
-  <div class="sidebar">
-    <app-messages></app-messages>
-  </div>
-  <div class="main">
-    <app-conversation></app-conversation>
-  </div>
+
+  <ng-container *ngIf="showChat">
+    <div class="sidebar">
+      <app-messages></app-messages>
+    </div>
+    <div class="main">
+      <app-conversation ></app-conversation>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!showChat">
+    <div class="sidebar">
+      <app-search ></app-search>
+    </div>
+    <div class="main">
+      <app-search-detail></app-search-detail>
+    </div>
+  </ng-container>
+
 </div>

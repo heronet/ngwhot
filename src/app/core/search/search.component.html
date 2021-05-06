@@ -1,0 +1,25 @@
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <input type="text" id="query" placeholder="Search" name="query" ngModel required>
+        <label for="query">by</label>
+        <select name="searchBy" id="searchBy" [ngModel]="search_params[0]" required>
+            <option *ngFor="let query of search_params" [value]="query">{{query | titlecase}}</option>
+        </select>
+        <button [disabled]="f.invalid">Search</button>
+    </form>
+
+    <ng-container *ngIf="!error_message">
+        <div 
+            class="card"
+            (click)="onUserSelect(user)"
+            *ngFor="let user of users">
+            <img src="/assets/avatar.png" alt="">
+            <div class="info">
+                <p>Username: {{user.username}}</p>
+                <p>Email: {{user.email}}</p>
+                <button class="send-button">Send Request</button>
+            </div>
+        </div>
+    </ng-container>
+    <p *ngIf="error_message" style="text-align: center;">{{error_message}} </p>
+</div>

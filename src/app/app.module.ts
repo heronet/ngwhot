@@ -12,6 +12,8 @@ import { LoginComponent } from './authentication/login/login.component';
 import { CoreComponent } from './core/core.component';
 import { TokenInterceptor } from './utils/token.interceptor';
 import { RegisterComponent } from './authentication/register/register.component';
+import { SearchComponent } from './core/search/search.component';
+import { SearchDetailComponent } from './core/search/search-detail/search-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { RegisterComponent } from './authentication/register/register.component'
     ToolbarComponent,
     LoginComponent,
     CoreComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchComponent,
+    SearchDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@ export class ConversationComponent implements OnInit, OnDestroy {
   takeMessages = 10;
   isButtonClickMessageLoading = false;
 
-  messages: Message[];
+  messages: Message[] = [];
   connectedUsers: String[] = [];
   constructor(private messagesService: MessagesService) { }
   

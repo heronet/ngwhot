@@ -1,0 +1,75 @@
+
+.container > form {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+form  > input {
+    border: 2px #263238 solid;
+    padding: 10px;
+}
+form > button {
+    border: 1px #000 solid;
+    background-color: crimson;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 2px;
+    font-variant: small-caps;
+}
+form > button:disabled {
+    border: 1px #000 solid;
+    background-color: #263238;
+}
+form > label {
+    background-color: #263238;
+    color: #fff;
+    font-size: 10px;
+    
+    text-align: center;
+    margin: 0;
+}
+form > select {
+    border: 2px solid #263238;
+    padding: 5px;
+    color: gray;
+}
+
+
+.card {
+  background-color: #263238;
+  display: flex;
+  color: #fff;
+  margin: 5px;
+  border-bottom: 1px #000 solid;
+  border-right: 1px #000 solid;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-selected {
+  color: aqua;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.info>p {
+  margin: 5px 0px 5px 0px;
+  font-size: 15px;
+}
+
+.send-button {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+    margin-bottom: 5px;;
+    cursor: pointer;
+}

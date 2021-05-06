@@ -26,10 +26,16 @@ img {
 .info > p {
    margin: 5px 0px 0px 0px;
 }
-.logout-button {
-    border: hidden;
-    color: white;
-    font-variant: small-caps;
-    background: crimson;
+button {
     cursor: pointer;
+    border: hidden;
+    font-variant: small-caps;
+}
+.logout-button {
+    color: #fff;
+    background: crimson;
+}
+.search-button {
+    color: crimson;
+    background: #fff;
 }
